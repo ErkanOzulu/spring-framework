@@ -13,5 +13,8 @@ public class MyApp {
         String str = container.getBean(String.class);
         System.out.println(str);
 
+        Integer number = container.getBean(Integer.class);
+        System.out.println(number);
+
     }
 }
