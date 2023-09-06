@@ -1,0 +1,53 @@
+TASK 1:
+	1-create new module spring-review-IoC
+	2-Add spring core dependency
+	3-create one package named bean_practice
+	4-Create 2 classes
+		-FullTimeEmployee
+		-PartTimeEmployee
+	5-Create one method for each class createAccount() -print something (void)
+	6-get beans using spring core @Bean annotation
+	----------
+	7-we need two String object
+		"Welcome to CydeoApp"
+		"Spring Core Practice"
+	8-print those two objects in the same project.(with new config file)
+
+TASK 2:
+    1-Create new package under java stereotype_annotations
+    2-Create Model and Config Package
+    3- Under the Model package
+        -DataStructure
+        -DevOps
+        -Microservice
+    4-Create method for each of them which is getTotalHours() and print some hour
+            exp: "Total hours: "+20;
+    5-We only need object from DataStructure and Microservices
+    6-use Stereotype annotation way to solve it.
+TASK 3:
+	7-Create ExtraHours class inside the model package.
+	8-Create a method getHours() - that returns 10;
+	9- use this method inside the DataStructure class to increaese the total hours
+	10-try to use lombok annotations for creating constructor
+
+Task 4:
+    1-Create new module:    spring-review-project
+    2- Create config,repository,model,service packages
+    3- create Employee class with
+        -name
+        -department
+        -hourlyRate fields
+    4- Create EmployeeRepository interface
+        one abstract method, int getHouryRate()
+    5-Create impl class DBEmployeeRepository (we will assume we are getting info from db)
+        -override the method,
+        -create one employee inside
+        return emp1.getHouryRate()
+    6-Create HoursRepository interface
+        int getHours() abstract method
+    7-Create RegularHours class override method and return 40
+    8- Create Salary Service
+        create calculateRegularySalary() method and print salary (hourlyRate * Regular Hours)(no static values)
+    --------
+    9-Create OvertimeHours class implement hours interface and override method and return 15
+    10-Handle the error when you call calculateRegularSalary method
