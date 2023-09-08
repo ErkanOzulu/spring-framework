@@ -5,7 +5,7 @@ src/main/resources : Contains non-java resources
 src/test/java : Contains test code
 
 
-mvnw and mwnw.cmd : These are maven wrapper scrips. You can use these scripts to build your project, even if you do not have Maven installed on your machine.
+mvnw and mwnw.cmd : These are maven wrapper scripts. You can use these scripts to build your project, even if you do not have Maven installed on your machine.
 
 pom.xml : This is the Maven build specification.
 
@@ -17,7 +17,7 @@ static : Contains any static content(images,css,js,etc)
 
 templates : Contains template files that will be used to render content to the browser(Thymeleaf)
 
-MyApplicationTests :  This is a simple test class that ensures that the Spring application contect loads successfully. You will add more tests to the mix as you develop the application.
+MyApplicationTests :  This is a simple test class that ensures that the Spring application context loads successfully. You will add more tests to the mix as you develop the application.
 
 
 Build Specification :
@@ -60,4 +60,4 @@ Because you will be running the application from an executable JAR, it is import
 
 @ComponentScan : Enables component scanning. This lets you declare other classes with annotation like @Component to have Spring automatically discover and register them as components in the Spring application context.
 
-main() method : calls a satic run method on SpringApplication class, whihc performs the actual bootstrapping of the application, creating the Spring application context. The 2 parameters passed to run() method are a configuration class, and the command line arguments.
+main() method : calls a static run method on SpringApplication class, which performs the actual bootstrapping of the application, creating the Spring application context. The 2 parameters passed to run() method are a configuration class, and the command line arguments.
