@@ -1,5 +1,6 @@
 package com.mycomp.controller;
 
+import com.mycomp.model.Student;
 import org.apache.catalina.LifecycleState;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,9 @@ public class StudentController {
         numbers.add(6);
         numbers.add(7);
         model.addAttribute("numbers",numbers);
+
+        Student student=new Student(1,"Mike","Smith");
+        model.addAttribute("student",student);
 
         return "student/welcome";
     }
