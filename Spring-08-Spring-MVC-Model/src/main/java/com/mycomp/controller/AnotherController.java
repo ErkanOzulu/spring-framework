@@ -11,10 +11,9 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping("/mentor")
-public class MentorController {
-
-    @RequestMapping("/list")  //localhost:8080/mentor/list
+@RequestMapping("/another")
+public class AnotherController {
+    @RequestMapping("/list")  //http://localhost:8080/another/list
     public String mentor(Model model) {
 
         List<Mentor> mentors = new ArrayList<>();
