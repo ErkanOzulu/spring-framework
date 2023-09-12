@@ -49,5 +49,5 @@ Task 4:
     8- Create Salary Service
         create calculateRegularySalary() method and print salary (hourlyRate * Regular Hours)(no static values)
     --------
-    9-Create OvertimeHours class implement hours interface and override method and return 15
+    9-Create OvertimeHours class implement hoursRepository interface and override method and return 15
     10-Handle the error when you call calculateRegularSalary method
