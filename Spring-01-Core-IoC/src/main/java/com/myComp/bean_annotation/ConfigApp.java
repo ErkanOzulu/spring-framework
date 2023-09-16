@@ -18,8 +18,8 @@ public class ConfigApp {
 
         return new PartTimeMentor();
     }
-    //@Bean(name = "p2")
-    @Bean
+
+    @Bean(name = "p2")
     PartTimeMentor partTimeMentor2(){
 
         return new PartTimeMentor();
