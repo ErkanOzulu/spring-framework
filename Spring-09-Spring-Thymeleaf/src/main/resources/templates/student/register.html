@@ -2,7 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+<!--    applied from messages.properties-->
+    <title th:text="#{index.page.title}">Title</title>
 </head>
 <body>
 <h2 >Welcome New Student</h2>
@@ -16,7 +18,7 @@
 
 <a th:href="@{https://amazon.com}">Amazon Home Page</a>
 <br>
-
+<!--added to navigate to welcome endpoint-->
 <a th:href="@{/student/welcome}">Link1</a><br>
 
 <!--Adding Parameters to Link-->
@@ -24,6 +26,13 @@
 <a th:href="@{/student/welcome(id=3)}">Link2</a><br>
 <a th:href="@{/student/welcome(id=${students.get(0).firstName})}">Link3</a>
 
+<!--Conditional logic-->
+
+<div th:text="${students.get(0).age>18?'Eligible':'Not eligible'}"></div>
+<div>
+    <span th:if="${students.get(0).firstName=='Mike'}"> Hi Mike! </span>
+    <span th:unless="${students.get(0).firstName=='Mike'}"> Hi Guys! </span>
+</div>
 <!--Iteration-->
 <ul>
     <li th:each="student:${students}" th:text="${student.firstName}"></li>
