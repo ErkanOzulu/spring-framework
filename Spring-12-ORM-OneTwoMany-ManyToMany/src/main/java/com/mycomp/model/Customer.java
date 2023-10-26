@@ -19,6 +19,11 @@ public class Customer {
     private String surName;
     private String email;
     private String address;
+
+    /**
+     * Fetch.EAGER --whenever system runs if you need payment it will bring all merchant info -- default eager
+     * Fetch.LAZY merchant info come when it is needed but if you ask only payment info merchant info will not come from system--performance situation
+     **/
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Payment> payments;
 
