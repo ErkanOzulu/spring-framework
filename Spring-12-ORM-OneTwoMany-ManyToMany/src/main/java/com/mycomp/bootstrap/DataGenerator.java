@@ -1,8 +1,12 @@
 package com.mycomp.bootstrap;
 
 import com.mycomp.enums.Status;
+import com.mycomp.model.Customer;
+import com.mycomp.model.Merchant;
 import com.mycomp.model.Payment;
 import com.mycomp.model.PaymentDetail;
+import com.mycomp.repository.CustomerRepository;
+import com.mycomp.repository.MerchantRepository;
 import com.mycomp.repository.PaymentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,9 +19,13 @@ public class DataGenerator implements CommandLineRunner {
 
 
     private final PaymentRepository paymentRepository;
+    private final MerchantRepository merchantRepository;
+    private final CustomerRepository customerRepository;
 
-    public DataGenerator(PaymentRepository paymentRepository) {
+    public DataGenerator(PaymentRepository paymentRepository, MerchantRepository merchantRepository, CustomerRepository customerRepository) {
         this.paymentRepository = paymentRepository;
+        this.merchantRepository = merchantRepository;
+        this.customerRepository = customerRepository;
     }
 
     @Override
@@ -34,8 +42,24 @@ public class DataGenerator implements CommandLineRunner {
 
         payment2.setPaymentDetail(paymentDetail2);
 
+        Merchant merchant1 = new Merchant("AmazonSubMerchant","M123",new BigDecimal("0.25"),new BigDecimal("3.25"),5);
+
+        Customer customer1 = new Customer("msmith","Mike","Smith","msmith@cydeo.com","VA");
+        payment1.setCustomer(customer1);
+        payment2.setCustomer(customer1);
+
+        customerRepository.save(customer1);
+
+        payment1.setMerchant(merchant1);
+        payment2.setMerchant(merchant1);
+
+        merchantRepository.save(merchant1);
+
         paymentRepository.save(payment1);
         paymentRepository.save(payment2);
+
+
+
 
 
     }

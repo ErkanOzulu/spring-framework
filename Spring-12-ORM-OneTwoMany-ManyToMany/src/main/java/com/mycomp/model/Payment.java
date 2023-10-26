@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 @Entity(name = "payments")
@@ -18,8 +19,12 @@ public class Payment {
     private LocalDate createDate;
     private BigDecimal amount;
     private Status paymentStatus;
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private PaymentDetail paymentDetail;
+    @ManyToOne
+    private Merchant merchant;
+    @ManyToOne
+    private Customer customer;
 
     public Payment(LocalDate createDate, BigDecimal amount, Status paymentStatus) {
         this.createDate = createDate;
