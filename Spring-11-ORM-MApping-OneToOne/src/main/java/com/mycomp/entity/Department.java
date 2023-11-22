@@ -13,7 +13,7 @@ public class Department extends BaseEntity {
 
     private String department;
     private String division;
-    @OneToOne(mappedBy = "department") //By directional relationship
+    @OneToOne(mappedBy = "department") //Bidirectional relationship
     private Employee employee;
 
     public Department(String department, String division) {

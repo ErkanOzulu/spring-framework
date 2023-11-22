@@ -3,7 +3,9 @@ package com.mycomp.entity;
 import com.mycomp.enums.MovieState;
 import com.mycomp.enums.MovieType;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,7 +14,8 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Movie extends BaseEntity{
 
     private String name;
@@ -28,10 +31,22 @@ public class Movie extends BaseEntity{
     private BigDecimal price;
 
 
-    @ManyToMany
+    @ManyToMany()
     @JoinTable(name = "movie_genre_rel",
             joinColumns = @JoinColumn(name="movie_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "name='" + name + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", duration=" + duration +
+                ", summary='" + summary + '\'' +
+                ", type=" + type +
+                ", state=" + state +
+                ", price=" + price +
+                '}';
+    }
 }
