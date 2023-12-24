@@ -1,17 +1,11 @@
 package com.mycomp.bootstarp;
 
-import com.mycomp.repository.AccountRepository;
-import com.mycomp.repository.CinemaRepository;
-import com.mycomp.repository.GenreRepository;
-import com.mycomp.repository.MovieCinemaRepository;
+import com.mycomp.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.stream.Collectors;
 
 
 @Component
@@ -21,12 +15,16 @@ public class DataGenerator implements CommandLineRunner {
     private final CinemaRepository cinemaRepository;
     private final GenreRepository genreRepository;
     private final MovieCinemaRepository movieCinemaRepository;
+    private final TicketRepository ticketRepository;
+    private final UserRepository userRepository;
 
-    public DataGenerator(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository, MovieCinemaRepository movieCinemaRepository) {
+    public DataGenerator(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository, MovieCinemaRepository movieCinemaRepository, TicketRepository ticketRepository, UserRepository userRepository) {
         this.accountRepository = accountRepository;
         this.cinemaRepository = cinemaRepository;
         this.genreRepository = genreRepository;
         this.movieCinemaRepository = movieCinemaRepository;
+        this.ticketRepository = ticketRepository;
+        this.userRepository = userRepository;
     }
     @Transactional//I added because spring.jpa.hibernate.ddl-auto=none
     @Override
@@ -78,6 +76,9 @@ public class DataGenerator implements CommandLineRunner {
 
         movieCinemaRepository.findFirst3ByOrderByMoviePriceDesc().forEach(System.out::println);
         System.out.println(movieCinemaRepository.findAllByMovieNameContains("Tenet"));
+        System.out.println(accountRepository.fetchAdminAccounts());
+        System.out.println(cinemaRepository.findDistinctBySponsoredName());
+
 
 
     }
