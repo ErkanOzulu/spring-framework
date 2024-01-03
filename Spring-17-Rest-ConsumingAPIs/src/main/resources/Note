@@ -1,0 +1,3 @@
+- Open Api --> https://jsonplaceholder.typicode.com/users
+- get it and consume
+- for convert json to dto --> https://www.jsonschema2pojo.org/
