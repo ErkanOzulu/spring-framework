@@ -1,0 +1,27 @@
+
+- add dependency into pom.xml to use OPENAPI
+    <dependency>
+         <groupId>org.springdoc</groupId>
+         <artifactId>springdoc-openapi-ui</artifactId>
+         <version>1.6.9</version>
+     </dependency>
+- open in browser
+
+- it shows your swagger through openApı. the default url is below
+    --> http://localhost:8080/swagger-ui/index.html#/
+- it shows in json format
+    --->http://localhost:8080/v3/api-docs
+-if you want to customize them you need to add in application.properties
+    --->> springdoc.api-docs.path=/api-docs
+    --->> springdoc.swagger-ui.path=/swagger-custom.html
+
+
+- to download swagger in yaml format
+    --->> http://localhost:8080/v3/api-docs.yaml
+
+- to change something
+     @Bean
+        public OpenAPI customOpenApi() {
+            return new OpenAPI()
+                    .info(new Info().title("Cinema Application OpenAPI").version("v1").description("Cinema application API documentation"));
+        }
