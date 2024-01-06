@@ -1,3 +1,18 @@
+API
+    - > Creating APIs
+    - > Jackson
+    - > Consuming APIs
+        - > RestTemplate - will be deprecated
+        - > FeignClient - Spring cloud -Netflix
+        - > WebClient - Reactive Programming
+    - > documentation (Swagger, OpenApi)
+    - > Security - OAuth2.0 -- Open + Authorization
+        - > Security concepts
+        - > Keycloak installation
+        - > Keycloak Configuration + Spring Boot
+
+
+
 - Open Api --> https://jsonplaceholder.typicode.com/users
 - get it and consume
 - for convert json to dto --> https://www.jsonschema2pojo.org/
