@@ -25,6 +25,8 @@ class WelcomeControllerTest {
     @Test
     void welcome() throws Exception {
 
+        // basic integration test
+
         //call  /welcome endpoint
 
         //verify "welcome"
@@ -43,7 +45,7 @@ class WelcomeControllerTest {
 
     @Test
     void welcome2() throws Exception {
-
+    //common way or preferred way of implementation
         RequestBuilder request = MockMvcRequestBuilders.get("/welcome")
                 .accept(MediaType.APPLICATION_JSON);
 
