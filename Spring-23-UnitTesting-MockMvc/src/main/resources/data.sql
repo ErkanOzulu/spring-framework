@@ -1,2 +1,2 @@
-Insert into student(first_name, lastname,age)
-VALUES ('Mike','Smith',20)
+INSERT INTO student(first_name, last_name, age)
+VALUES ('Mike', 'Smith', 20);
